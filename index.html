@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quick Start - Layui</title>
+    <link href="./layui/css/layui.css" rel="stylesheet">
+    <style>
+        .your-element-class {
+            background-image: url(asserts/img/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        body {
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+                color: #333;
+            }
+    </style>
+</head>
+
+<body class="your-element-class">
+    <!-- HTML Content -->
+    <div class="layui-header header top">
+        <ul class="layui-nav">
+            <li class="layui-nav-item"><img class="logo-img mob-show" src="./asserts/img/logo.jpg"></li>
+            <li class="layui-nav-item  layui-this"><a href="./index.html"><i class="layui-icon layui-icon-home"></i> 首
+                    页</a></li>
+            <li class="layui-nav-item"><a href="./article.html"><i class="layui-icon layui-icon-slider"></i>
+                    文 章</a></a>
+            </li>
+            <li class="layui-nav-item"><a href="./about.html"><i class="layui-icon layui-icon-username"></i> 关 于</a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-container layui-row page-main">
+        <div class="layui-col-md1"></div>
+        <!-- 左侧边栏 开始 -->
+        <div class="layui-col-md3 rd mob-show " style="position: sticky; top: 60px;z-index: 9000;">
+            <div class="layui-panel site-menu rd">
+                <div class="layui-card rd">
+                    <div class="layui-card-header">
+                        <i class="layui-icon layui-icon-theme"></i> 作者信息
+                    </div>
+                    <div class="layui-card-body">
+                        <div class="layui-row">
+                            <div class="layui-col-md5">
+                                <img class="avatar" src="./asserts/img/logo.jpg" />
+                            </div>
+                            <div class="layui-col-md7">
+                                <h4><i class="layui-icon layui-icon-friends"></i> Nick:mbrc</h4>
+                                <hr>
+                                <h4><i class="layui-icon layui-icon-login-qq"></i> QQ: 2832122084</h4>
+                            </div>
+                        </div>
+                        <div class="layui-row">
+                            <blockquote class="layui-elem-quote quote-margin">
+                                功成不必在我，功成必定有我
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="layui-panel rd">
+                <div class="layui-card rd">
+                    <div class="layui-card-header">
+                        <i class="layui-icon layui-icon-form"></i> 最近文章
+                    </div>
+                    <div class="layui-card-body">
+                        <div class="layui-row">
+                            <ul class="layui-menu">
+                                <li class="layui-menu-item"><a href="./article5.html">我自己写的代码(原创)</a></li>
+                                <li class="layui-menu-item"><a href="./article1.html">欢迎回到 C++ - 现代 C++(转) -
+                                        [2023/05/25]</a>
+                                </li>
+                                <li class="layui-menu-item"><a href="./article2.html">Python For Beginners(转) -
+                                        [2023/05/25]</a></li>
+                                <li class="layui-menu-item"><a href="./article3.html">CSS 入门概述(转) - [2023/05/25]</a>
+                                </li>
+                                <li class="layui-menu-item"><a href="./article4.html">JavaScript——用户端动态脚本(转) -
+                                        [2023/05/25]</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="layui-panel rd">
+                <div class="layui-card rd">
+                    <div class="layui-card-header">
+                        <i class="layui-icon layui-icon-note"></i> 文章标签
+                    </div>
+                    <div class="layui-card-body">
+                        <span class="layui-badge layui-bg-orange">c++</span>&nbsp;
+                        <span class="layui-badge">html</span>&nbsp;
+                        <span class="layui-badge layui-bg-green">css</span>&nbsp;
+                        <span class="layui-badge layui-bg-blue">javascript</span>&nbsp;
+                        <span class="layui-badge layui-bg-green">python</span>&nbsp;
+                        <span class="layui-badge">java</span>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <!-- 左侧边栏 结束 -->
+        <div class="layui-col-md1">&nbsp;</div>
+        <!-- main 开始 -->
+        <div class="layui-col-md6 site-content">
+            <br>
+            <blockquote class="layui-elem-quote">
+                文 章 总 览
+            </blockquote>
+            <div class="layui-card rd">
+                <div class="layui-card-header article-title">
+                    <h2><a href="./article5.html">我自己写的代码</a></h2>
+                </div>
+                <div class="layui-card-body">
+                    <div class="layui-row article-main">
+                        <div class="layui-col-md4 mob-show">
+                            <img class="article-img rd"
+                                src="https://th.bing.com/th?id=ODLS.3b218e25-c010-419d-b6da-7cfed31c613d&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" />
+                        </div>
+                        <div class="layui-col-md8">
+                            <div class="article-content">
+                                我自己写的线段树代码，还可以吧
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="layui-row text-center">
+                        <div class="layui-col-md4">
+                            <i class="layui-icon layui-icon-log"></i> 2023-05-25
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-component"></i> <a
+                                href="article5.html">自创</a>
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-note"></i> <span class="layui-badge layui-bg-orange">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card rd">
+                <div class="layui-card-header article-title">
+                    <h2><a href="./article1.html">欢迎回到 C++ - 现代 C++(转)</a></h2>
+                </div>
+                <div class="layui-card-body">
+                    <div class="layui-row article-main">
+                        <div class="layui-col-md4 mob-show">
+                            <img class="article-img rd"
+                                src="https://th.bing.com/th?id=ODLS.f9daea21-9936-4164-815f-b5209459f3c6&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" />
+                        </div>
+                        <div class="layui-col-md8">
+                            <div class="article-content">
+                                自创建以来，C++ 即已成为世界上最常用的编程语言之一。 正确编写的 C++ 程序快速、高效。
+                                相对于其他语言，该语言更加灵活：它可以在最高的抽象级别上运行，还可以在硅级低级别上运行。 C++ 提供高度优化的标准库。
+                                它支持访问低级别硬件功能，从而最大限度地提高速度并最大程度地降低内存需求。 C++ 几乎可以创建任何类型的程序：游戏、设备驱动程序、HPC、云、桌面、嵌入式和移动应用等。
+                                甚至用于其他编程语言的库和编译器也使用 C++ 编写。
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="layui-row text-center">
+                        <div class="layui-col-md4">
+                            <i class="layui-icon layui-icon-log"></i> 2023-05-25
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-component"></i> <a
+                                href="https://learn.microsoft.com/zh-cn/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170">转自此处</a>
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-note"></i> <span
+                                class="layui-badge layui-bg-orange">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card rd">
+                <div class="layui-card-header article-title">
+                    <h2><a href="./article2.html">Python For Beginners(转)</a></h2>
+                </div>
+                <div class="layui-card-body">
+                    <div class="layui-row article-main">
+                        <div class="layui-col-md4 mob-show">
+                            <img class="article-img rd"
+                                src="https://th.bing.com/th?id=ODLS.8e0737c0-389e-43eb-9bcc-3c5e88f9f86a&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" />
+                        </div>
+                        <div class="layui-col-md8">
+                            <div class="article-content">
+                                Welcome! Are you completely new to programming? If not then we presume you will be
+                                looking for information about why and
+                                how to get started with Python. Fortunately an experienced programmer in any programming
+                                language (whatever it may be)
+                                can pick up Python very quickly. It's also easy for beginners to use and learn, so jump
+                                in!
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="layui-row text-center">
+                        <div class="layui-col-md4">
+                            <i class="layui-icon layui-icon-log"></i> 2023-05-25
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-component"></i> <a
+                                href="https://www.python.org/about/gettingstarted/">转自此处</a>
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-note"></i> <span
+                                class="layui-badge layui-bg-orange">python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card rd">
+                <div class="layui-card-header article-title">
+                    <h2><a href="./article3.html">CSS 入门概述(转)</a></h2>
+                </div>
+                <div class="layui-card-body">
+                    <div class="layui-row article-main">
+                        <div class="layui-col-md4 mob-show">
+                            <img class="article-img rd"
+                                src="https://th.bing.com/th?id=ODLS.c71eefa3-d03c-4a3e-b1b5-93439bb31fc8&w=32&h=32&qlt=91&pcl=fffffa&o=6&pid=1.2" />
+                        </div>
+                        <div class="layui-col-md8">
+                            <div class="article-content">
+                                CSS（层叠样式表）用于设置和布置网页——例如，更改内容的字体、颜色、大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。这个模块为你掌握 CSS
+                                的过程提供了一个温和的开端，包括它如何工作的基础知识，语法是什么样的，以及如何开始使用它来为 HTML 添加样式。
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="layui-row text-center">
+                        <div class="layui-col-md4">
+                            <i class="layui-icon layui-icon-log"></i> 2023-05-25
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-component"></i> <a
+                                href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/First_steps">转自此处</a>
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-note"></i> <span
+                                class="layui-badge layui-bg-orange">css</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card rd">
+                <div class="layui-card-header article-title">
+                    <h2><a href="./article4.html">JavaScript——用户端动态脚本(转)</a></h2>
+                </div>
+                <div class="layui-card-body">
+                    <div class="layui-row article-main">
+                        <div class="layui-col-md4 mob-show">
+                            <img class="article-img rd"
+                                src="https://th.bing.com/th?id=ODLS.eb89c34f-d806-4772-9d33-b009da1d012e&w=32&h=32&qlt=98&pcl=fffffa&o=6&pid=1.2" />
+                        </div>
+                        <div class="layui-col-md8">
+                            <div class="article-content">
+                                JavaScript 编程语言允许你在 Web
+                                页面上实现复杂的功能。如果你看到一个网页不仅仅显示静态的信息，而是显示依时间更新的内容，或者交互式地图，或者 2D/3D
+                                动画图像，或者滚动的视频播放器，等等——你基本可以确定，这需要
+                                JavaScript 的参与。
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="layui-row text-center">
+                        <div class="layui-col-md4">
+                            <i class="layui-icon layui-icon-log"></i> 2023-05-25
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-component"></i><a
+                                href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript">转自此处</a>
+                        </div>
+                        <div class="layui-col-md4 mob-show">
+                            <i class="layui-icon layui-icon-note"></i> <span
+                                class="layui-badge layui-bg-orange">javascript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md1">&nbsp;</div>
+        <!-- main 结束 -->
+    </div>
+    <script src="./layui/layui.js"></script>
+    <script>
+        // Usage
+        layui.use(function () {
+            var layer = layui.layer;
+            // Welcome
+            layer.msg('Welcome to my blog', { icon: 6 });
+        });
+    </script>
+</body>
+
+</html>

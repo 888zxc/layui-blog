@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quick Start - Layui</title>
+    <link href="./layui/css/layui.css" rel="stylesheet">
+    <link href="./asserts/css/prism.css" rel="stylesheet">
+    <style>
+        .your-element-class {
+            background-image: url(asserts/img/gd.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .heading-anchor {
+            text-align: left;
+            font-size: 50px;
+            font-weight: bolder;
+        }
+
+        p {
+            margin: 5px 5px;
+        }
+
+        pre {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        body {
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+                color: #333;
+            }
+    </style>
+</head>
+
+<body class="your-element-class">
+    <!-- HTML Content -->
+    <div class="layui-header header top">
+        <ul class="layui-nav">
+            <li class="layui-nav-item"><img class="logo-img mob-show" src="./asserts/img/logo.jpg"></li>
+            <li class="layui-nav-item"><a href="./index.html"><i class="layui-icon layui-icon-home"></i> 首
+                    页</a></li>
+            <li class="layui-nav-item  layui-this"><a href="./article.html"><i class="layui-icon layui-icon-slider"></i>
+                    文 章</a></a>
+            </li>
+            <li class="layui-nav-item"><a href="./about.html"><i class="layui-icon layui-icon-username"></i> 关 于</a>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-container layui-row page-main">
+        <div class="layui-col-md1"></div>
+        <!-- 左侧边栏 开始 -->
+        <div class="layui-col-md3 rd mob-show">
+            <div class="layui-panel site-menu rd">
+                <div class="layui-card rd">
+                    <div class="layui-card-header">
+                        <i class="layui-icon layui-icon-theme"></i> 作者信息
+                    </div>
+                    <div class="layui-card-body">
+                        <div class="layui-row">
+                            <div class="layui-col-md5">
+                                <img class="avatar" src="./asserts/img/logo.jpg" />
+                            </div>
+                            <div class="layui-col-md7">
+                                <h4><i class="layui-icon layui-icon-friends"></i> Nick:mbrc</h4>
+                                <hr>
+                                <h4><i class="layui-icon layui-icon-login-qq"></i> QQ: 2832122084</h4>
+                            </div>
+                        </div>
+                        <div class="layui-row">
+                            <blockquote class="layui-elem-quote quote-margin">
+                                功成不必在我，功成必定有我
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div><br><br><br>
+        <div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">C++</span>
+            <button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+                <span class="icon margin-right-xxs" aria-hidden="true">
+                    <span class="docon docon-edit-copy"></span>
+                </span>
+                <span>复制</span>
+                <div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent"
+                    aria-hidden="true">
+                    <span class="icon font-size-lg">
+                        <span class="docon docon-check-mark"></span>
+                    </span>
+                </div>
+            </button>
+        </div>
+        <div class="layui-col-md12"> <!-- 使用layui的栅格系统，将代码放入一个列中 -->
+            <pre><code class="language-cpp">
+//URL:https://vjudge.net/problem/Gym-104053E#author=scholar_
+//TIME:2023 4 14 20:30
+//DESCRIPTION:
+/*首先可以发现，由于所有电梯都是同向运动，所以当一部电梯从某一层向上运动时，后面的电梯不可能在它之前到达这一层。也就是说，我们只需要考虑在每一部电梯到达楼层 m-1 时，应该按哪些电梯按钮，才能使它在后面的电梯中最先到达楼层 m。
+
+我们可以考虑从后往前贪心，即先计算每一部电梯到达楼层 m 之后，是否有足够的时间按到达楼层 m 的电梯按钮。具体地，假设当前考虑第 i 个电梯，它的到达时间为 t_i，那么我们需要找到在 [t_i, t_i + m - 1] 时间段内，所有还未按下的电梯按钮中编号最小的那个，并把它按下。
+
+为了方便处理，我们可以将每个电梯到达楼层 m 之前的按电梯按钮的最小时间 p_i 预处理出来，那么我们只需要找到满足 p_j < t_i 且 j 最小的那个 j，就可以按下编号为 j 的电梯按钮了。
+
+对于预处理 p_i 的方法，我们可以倒序枚举每个电梯，计算它到达楼层 m 之前按下电梯按钮的最小时间 p_i，具体方法如下：
+
+对于当前考虑的电梯 i，我们先假设它没有按电梯按钮，计算它到达楼层 m 的时间 t_i。
+从 i+1 开始，枚举每个电梯 j，如果 j 的到达时间 t_j 小于等于 t_i，那么说明 j 可以在 t_i 之前到达楼层 m，也就是说，如果我们按下 j 的电梯按钮，它能在 t_i 之前到达楼层 m。因此，我们可以更新 p_i 为 t_j+1。
+最后，如果 p_i 仍然为 0，那么说明在 i+1 到 n 之间没有电梯能在 t_i 之前到达楼层 m，也就是说，i 按电梯按钮之后不可能是最先到达楼层 m 的电梯，因此输出-1*/
+    /*----------------------------------------------------头文件----------------------------------------------------*/
+#include <bits/stdc++.h>
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <algorithm>
+#include <cmath>
+#include <deque>
+#include <list>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <vector>
+#include <cstdlib>
+
+/*----------------------------------------------------前置条件----------------------------------------------------*/
+using namespace std;
+
+using ll = long long;
+const int N = 5e5 + 5;
+const ll l1 = 1, r1 = 1e9;
+//功成不必在我，功成必定有我
+/*----------------------------------------------------函数声明----------------------------------------------------*/
+
+struct Node{
+    ll l, r;
+    ll sum;
+    ll cnt;
+}tree[32 * N];
+ll ans[N];
+ll root, idx;
+
+int new_node(){
+    ll p = ++idx;
+    tree[p].l = tree[p].r = tree[p].cnt = tree[p].sum = 0;
+    return p;
+}
+
+ll ask_sum(int p, ll l, ll r, ll ql, ll qr){
+    if (!p) return 0;
+    if (l >= ql && r <= qr)return tree[p].sum;
+    ll mid = (l + r) >> 1;
+    ll res = 0;
+    if (ql <= mid){
+        res += ask_sum(tree[p].l, l, mid, ql, qr);
+    }
+    if (qr >= mid){
+        res += ask_sum(tree[p].r, mid + 1, r, ql, qr);
+    }
+    return res;
+}
+
+int ask_cnt(int p, ll l, ll r, ll ql, ll qr){
+    if (!p)return 0;
+    if (l >= ql && r <= qr)return tree[p].cnt;
+    ll mid = (l + r) >> 1;
+    ll ans = 0;
+    if (ql <= mid){
+        ans += ask_cnt(tree[p].l, l, mid, ql, qr);
+
+    }
+    if (qr >= mid)ans += ask_cnt(tree[p].r, mid + 1, r, ql, qr);
+    return ans;
+}
+
+void modify_tree(ll& p, ll l, ll r, ll x, ll y){
+    if (!p) p = new_node();
+    tree[p].cnt++;
+    tree[p].sum += y;
+    if (l == r)return;
+    int mid = (l + r) >> 1;
+    if (x <= mid){
+        modify_tree(tree[p].l, l, mid, x, y);
+    }
+    else{ modify_tree(tree[p].r, mid + 1, r, x, y); }
+}
+
+void solve(){
+    ll n, m;
+    cin >> n >> m;
+    vector < ll > a(n);
+    for (int i = 0; i < n; i++){
+        cin >> a[i];
+        ll sum = ask_sum(root, l1, r1, l1, a[i]);
+        ll cnt = ask_cnt(root, l1, r1, l1, a[i]);
+        ans[i + 1] = cnt * (a[i] + 1) - sum;
+        modify_tree(root, l1, r1, a[i], a[i]);
+    }
+    root = idx = 0;
+    for (int i = n; i; i--){
+        ll sum = ask_sum(root, l1, r1, l1, a[i - 1]);
+        ll cnt = ask_cnt(root, l1, r1, l1, a[i - 1]);
+        ans[i] += cnt * a[i - 1] - sum;
+        modify_tree(root, l1, r1, a[i - 1], a[i - 1]);
+    }
+    for (int i = 1; i <= n; i++){
+        if (ans[i] > m - 2) ans[i] = -1;
+    }
+    for (int i = 1; i <= n; i++){
+        cout << ans[i] << '\n';
+    }
+}
+
+/*----------------------------------------------------主函数----------------------------------------------------*/
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int t = 1;
+    //cin >> t;
+    while (t--){
+        solve();
+    }
+    return 0;
+}
+                </code></pre>
+        </div>
+
+    <div>&nbsp;</div><br>
+    <div class="layui-col-md1">&nbsp;</div>
+    <script src="./layui/layui.js"></script>
+    <script>
+        // Usage
+        layui.use(function () {
+            var layer = layui.layer;
+            // Welcome
+            layer.msg('Welcome to article:我写的线段树代码', { icon: 6 });
+        });
+    </script>
+    <script src="asserts/js/prism.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            Prism.highlightAll();
+        });
+    </script>
+</body>
+
+</html>

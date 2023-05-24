@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quick Start - Layui</title>
+    <link href="./layui/css/layui.css" rel="stylesheet">
+    <style>
+        .your-element-class {
+            background-image: url(asserts/img/R\ \(1\).jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        body {
+                padding: 20px;
+                text-align: center;
+                font-size: 24px;
+                color: #333;
+            }
+            .message {
+                margin-top: 100px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+            }
+    </style>
+        <script src="path/to/layui.js"></script> <!-- 引入layui的JavaScript文件 -->
+</head>
+
+<body class="your-element-class">
+    <!-- HTML Content -->
+    <div class="layui-header header top">
+        <ul class="layui-nav">
+            <li class="layui-nav-item"><img class="logo-img mob-show" src="./asserts/img/logo.jpg"></li>
+            <li class="layui-nav-item"><a href="./index.html"><i class="layui-icon layui-icon-home"></i> 首
+                    页</a></li>
+            <li class="layui-nav-item"><a href="./article.html"><i class="layui-icon layui-icon-slider"></i>
+                    文 章</a></a>
+            </li>
+            <li class="layui-nav-item  layui-this"><a href="./about.html"><i class="layui-icon layui-icon-username"></i>
+                    关 于</a></li>
+        </ul>
+    </div>
+    <div class="layui-container layui-row page-main">
+        <div class="layui-col-md1"></div>
+        <!-- 左侧边栏 开始 -->
+        <div class="layui-col-md3 rd mob-show">
+            <div class="layui-panel site-menu rd">
+                <div class="layui-card rd">
+                    <div class="layui-card-header">
+                        <i class="layui-icon layui-icon-theme"></i> 作者信息
+                    </div>
+                    <div class="layui-card-body">
+                        <div class="layui-row">
+                            <div class="layui-col-md5">
+                                <img class="avatar" src="./asserts/img/logo.jpg" />
+                            </div>
+                            <div class="layui-col-md7">
+                                <h4><i class="layui-icon layui-icon-friends"></i> Nick:mbrc</h4>
+                                <hr>
+                                <h4><i class="layui-icon layui-icon-login-qq"></i> QQ: 2832122084</h4>
+                            </div>
+                        </div>
+                        <div class="layui-row">
+                            <blockquote class="layui-elem-quote quote-margin">
+                                功成不必在我，功成必定有我
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-container">
+            <div class="layui-col-md6 layui-col-md-offset3">
+                <div class="message">
+                    写一天了，累了，不想写了
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="./layui/layui.js"></script>
+        <script>
+            // Usage
+            layui.use(function () {
+                var layer = layui.layer;
+                // Welcome
+                layer.msg('Welcome to about', { icon: 6 });
+            });
+        </script>
+</body>
+
+</html>
